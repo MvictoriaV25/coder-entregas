@@ -1,0 +1,153 @@
+// Variables
+$font: "Playfair Display", serif;  // Fuente 
+$color-background-light: whitesmoke;
+$color-background-red: rgb(151, 7, 7);
+$color-background-yellow: rgb(226, 192, 0);
+$color-background-green: rgb(1, 83, 1);
+$color-text-dark: black;
+$color-text-green: #458d45;
+$color-text-light:  #cdeacd;
+$color-footer-background: #f0f0f0;
+$color-text-receta: #333; 
+
+// Seteo general de la web
+body {
+    font-family: $font;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+// Encabezado
+header {
+    display: flex;
+    height: 5rem;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: $color-background-light;
+    color: $color-text-green;
+
+    nav {
+        ul {
+            list-style: none;
+            display: flex;
+            gap: 1rem;
+
+            .header-link:visited {
+                color: $color-text-dark;
+            }
+        }
+    }
+}
+
+// Titulo
+.titulo-principal-underlined {
+    text-decoration: underline;
+}
+
+// Contenido principal
+main {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: space-around;
+    text-align: center;
+    background-color: $color-background-light;
+    color: $color-background-light;
+
+    @media screen and (min-width: 850px) {
+        margin-left: 2rem;
+        margin-right: 2rem;
+    }
+
+    @media screen and (min-width: 1010px) {
+        grid-template-columns: repeat(2, 1fr); // todavía  no me doy cuenta cómo hacer que esto quede bien 
+        gap: 2rem; 
+    }
+}
+
+// Estilo de las imágenes
+img {
+    max-width: 100%;
+    height: auto;
+    margin: 0;
+    object-fit: contain;
+}
+
+// Sección RECETAS POPULARES
+.populares {
+    background-color: $color-background-red;
+    justify-content: space-around;
+    text-align: center;
+
+    .link-dark {
+        color: $color-text-dark; // Color para enlaces normales
+    
+        &:visited {
+            color: $color-text-light; // Color para enlaces visitados
+        }
+    }
+}
+
+// Sección ULTIMAS RECETAS
+.ultimas {
+    background-color: $color-background-yellow;
+    color: whitesmoke;
+
+    .ultima-uno,
+    .ultima-dos {
+        background-color: $color-background-light;
+        color: $color-text-dark;
+    }
+}
+
+// Sección TIENDA
+.tienda {
+    background-color: $color-background-green;
+
+    .tienda-uno,
+    .tienda-dos {
+        background-color: $color-background-light;
+        color: $color-text-dark;
+    }
+}
+
+// Estilo del pie de página
+footer {
+    display: flex;
+    padding: 10px;
+    background-color: $color-footer-background;
+    color: $color-text-green;
+}
+
+// Estilos para las recetas específicas
+.receta {
+    margin: 2rem;
+    padding: 1rem;
+    background-color: $color-background-light;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+    h2 {
+        color: $color-text-dark;
+    }
+
+    .ingredientes,
+    .instrucciones {
+        background-color: $color-background-light;
+        padding: 1rem;
+        border: 1px solid $color-text-dark;
+        border-radius: 5px;
+        color: $color-text-receta; // Color de texto definido
+
+        h2 {
+            border-bottom: 2px solid $color-text-dark;
+            padding-bottom: 0.5rem;
+        }
+
+        ul,
+        ol {
+            margin: 1rem 0;
+        }
+    }
+}
